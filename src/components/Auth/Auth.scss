@@ -1,0 +1,91 @@
+@import '../../styles/main.scss';
+
+.auth {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: $auth-bgc;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-top: 165px;
+  }
+  &__form {
+    background-color: #fff;
+    border-radius: 9px;
+    width: 375px;
+    height: 255px;
+    margin-top: 17px;
+    filter: drop-shadow(0 0 10px rgba(90, 97, 105, 0.2));
+    @include from($mobile) {
+      width: 280px;
+    }
+  }
+  &__link {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: $blue;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 17px;
+    margin-right: 18px;
+    margin-top: 15px;
+  }
+}
+
+.header {
+  &__text {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: $text;
+    margin-left: 12px;
+  }
+}
+
+.form {
+  &__text {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: $text;
+  }
+  &__label-text {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: $form-text;
+    margin-top: 15px;
+  }
+  &__input {
+    width: 340px;
+    height: 30px;
+    border: 1px solid $form-input-color;
+    border-radius: 3px;
+    margin-top: 8px;
+    padding: 8px 0 8.5px 11px;
+    font-family: "Roboto";
+    font-weight: 400;
+    color: $form-text;
+    font-size: 1.1rem;
+    @include from($mobile) {
+      width: 245px;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 17px;
+}
