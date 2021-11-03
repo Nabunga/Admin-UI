@@ -1,0 +1,62 @@
+@import '../../styles/main.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0px 2.5px 9.5px 0px #5A61691F;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  &__icon {
+    margin-left: 27px;
+  }
+  &__text {
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: $header-text;
+    margin-left: 8px;
+  }
+}
+
+.user-info {
+  display: flex;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 70px;
+  height: 67px;
+  box-shadow: -0.5px 0px 0px 0px #CACEDB;
+  &__count-icon {
+    position: absolute;
+    left: 36px;
+    top: 36px;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 218px;
+  box-shadow: -1px 0px 0px 0px #CACEDB;
+  &__name {
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $user-text;
+    margin-left: 14px;
+  }
+  &__dropdown-icon {
+    margin-left: 42px;
+    cursor: pointer;
+  }
+}

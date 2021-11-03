@@ -1,12 +1,16 @@
 import React from 'react';
 import './styles/reset.scss';
-import Auth from './components/Auth/Auth';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import OrderPage from './components/OrderPage/OrderPage';
 
 const App = () => {
   return (
     <>
-      <Auth />
-    </>)
+      <OrderPage />
+    </>
+  )
 };
 
 export default App;

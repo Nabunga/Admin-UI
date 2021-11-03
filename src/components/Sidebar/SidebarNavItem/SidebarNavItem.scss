@@ -1,0 +1,22 @@
+@import '../../../styles/main.scss';
+
+.sidebar-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-left: 25px;
+  height: 58px;
+  box-shadow: 1px 1px 0px 0px #E1E5EB;
+  cursor: pointer;
+  &__text {
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $text;
+    margin-left: 12px;
+  }
+  &:active {
+    background-color: $sidebar-item-active;
+  }
+}
+

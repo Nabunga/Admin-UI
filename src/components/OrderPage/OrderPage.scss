@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.app-wrapper {
+  display: flex;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+.main {
+  display: flex;
+  flex: 1 1 auto
+}

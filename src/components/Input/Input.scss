@@ -1,0 +1,25 @@
+@import "../../styles/main.scss";
+
+.form {
+  &__label-text {
+    font-family: "Helvetica";
+    font-weight: 400;
+    color: $form-text;
+    margin-top: 15px;
+  }
+  &__input {
+    width: 340px;
+    height: 30px;
+    border: 1px solid $form-input-color;
+    border-radius: 3px;
+    margin-top: 8px;
+    padding: 8px 0 8.5px 11px;
+    font-family: "Helvetica";
+    font-weight: 400;
+    color: $form-text;
+    font-size: 1.1rem;
+    @include from($mobile) {
+      width: 245px;
+    }
+  }
+}
