@@ -46,8 +46,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 218px;
+  max-width: 218px;
   box-shadow: -1px 0px 0px 0px #CACEDB;
+  padding: 0 5px;
+  &__img {
+    @include from($mobile) {
+      display: none;
+    }
+  }
   &__name {
     font-family: "Helvetica";
     font-weight: 400;
@@ -58,5 +64,8 @@
   &__dropdown-icon {
     margin-left: 42px;
     cursor: pointer;
+    @include from($mobile) {
+      margin-left: 10px;
+    }
   }
 }

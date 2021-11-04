@@ -1,0 +1,40 @@
+@import "../../../styles/main.scss";
+
+.order-card__header {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1062px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 9px 9px 0 0;
+  border-bottom: 1px solid #E0E2E8;
+  // box-shadow: 0 1px 20px 5px rgba($color: #5A6169, $alpha: .2);
+  @include from($mobile) {
+    height: fit-content;
+  }
+}
+
+.dropdown-btn-group {
+  display: flex;
+  flex: 1 1 auto;
+  padding-left: 7px;
+  @include from($mobile) {
+    flex-wrap: wrap;
+    padding: 5px 0;
+  }
+  &__accept-btn {
+    padding: 0 22px 0 15px;
+  }
+}
+
+.dropdown-group {
+  position: relative;
+  margin-left: 15px;
+  &__icon {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+  }
+}

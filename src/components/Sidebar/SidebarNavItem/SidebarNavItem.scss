@@ -2,18 +2,26 @@
 
 .sidebar-item {
   display: flex;
+  max-width: 288px;
+  flex: 1 1 auto;
   flex-flow: row nowrap;
   align-items: center;
-  padding-left: 25px;
+  padding: 0 25px 0 25px;
   height: 58px;
   box-shadow: 1px 1px 0px 0px #E1E5EB;
   cursor: pointer;
+  @include from($tablet) {
+    padding: 0px 0px 0 22px;
+  }
   &__text {
     font-family: "Helvetica";
     font-weight: 400;
     font-size: 1.5rem;
     color: $text;
     margin-left: 12px;
+    @include from($tablet) {
+      display: none;
+    }
   }
   &:active {
     background-color: $sidebar-item-active;

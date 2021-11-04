@@ -22,7 +22,7 @@ const Header = () => {
           <CountNotificationIcon className="notification__count-icon" />
         </div>
         <div className="user">
-          <img src={Avatar} alt="user" />
+          <img className="user__img" src={Avatar} alt="user" />
           <p className="user__name">Admin</p>
           <DropdownIcon className="user__dropdown-icon" />
         </div>

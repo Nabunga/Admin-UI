@@ -1,9 +1,12 @@
-import React from "react";
-import './index.css';
+import React, { FC } from "react";
+import './DropdownMenu.scss';
 import { Menu, Dropdown, Button } from 'antd';
-import 'antd/dist/antd.css';
 
-const DropdownMenu = () => {
+interface DropdownMenuProps {
+  btnText: string
+}
+
+const DropdownMenu: FC<DropdownMenuProps> = ({btnText}) => {
 
   const menu = (
     <Menu>
@@ -26,11 +29,9 @@ const DropdownMenu = () => {
   )
 
   return (
-
     <Dropdown overlay={menu} placement="bottomCenter">
-      <Button>За неделю</Button>
+      <Button>{btnText}</Button>
     </Dropdown>
-
   )
 };
 
