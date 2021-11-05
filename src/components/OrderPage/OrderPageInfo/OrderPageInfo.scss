@@ -8,8 +8,6 @@
     padding-top: 16px;
     padding-bottom: 178px;
     border-bottom: 1px solid #E0E2E8;
-    // box-shadow: 1px 1px 20px 5px rgba($color: #5A6169, $alpha: .2);
-
     @include from($tablet) {
       flex-direction: column;
       padding-left: 25px;
@@ -23,28 +21,27 @@
 
 .details {
   &__address {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
     color: #889098;
   }
   &__date {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
     color: #889098;
     margin-top: 6px;
   }
   &__color {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
     color: #889098;
     margin-top: 6px;
   }
   &_bold {
-    font-weight: 700;
-    color: $black;
+    color: #000;
   }
 }
 
@@ -56,9 +53,9 @@
   }
   &__price {
     font-family: "Helvetica";
-    font-weight: 600;
+    font-weight: 400;
     font-size: 2.4em;
-    color: black;
+    color: #000;
     @include from($tablet) {
       padding-top: 15px;
     }
@@ -104,4 +101,9 @@
       }
     }
   }
+}
+
+.price__symbol {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }

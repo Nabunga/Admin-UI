@@ -7,9 +7,8 @@
     padding-top: 15px;
   }
   &__label {
-    font-family: "Roboto";
-    font-weight: 300;
-    font-size: 1.4rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     color: $gray;
     margin-top: 7px;
     &:nth-child(2) {

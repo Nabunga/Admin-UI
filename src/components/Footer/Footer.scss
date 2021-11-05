@@ -16,7 +16,7 @@
 
 .footer-link {
   background-color: #fff;
-  font-family: "Helvetica";
+  font-family: "Helvetica", sans-serif;
   font-weight: 400;
   font-size: 1.4rem;
   color: $blue;
@@ -28,7 +28,7 @@
 .developer {
   padding-right: 28px;
   color: $footer-text;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
 }

@@ -1,35 +1,50 @@
 //colors
-$main-accent: #0EC261;
-$blue: #007BFF;
-$text: #3D5170;
+$main-accent: #0ec261;
+$blue: #007bff;
+$text: #3d5170;
 $gray: #999999;
-$light-gray: #E9ECEF;
+$light-gray: #e9ecef;
 $black: #121212;
-$red: #CB3656;
+$red: #cb3656;
 $form-text: #495057;
-$auth-bgc: #F5F6F8;
+$auth-bgc: #f5f6f8;
 $form-shadow: #979797;
-$form-input-color: #BECAD6;
-$sidebar-icon-disabled: #CACEDB;
-$sidebar-item-active: #FBFBFB;
-$header-text: #767F9D;
-$user-text: #5A6169;
-$footer-text: #818EA3;
+$form-input-color: #becad6;
+$sidebar-icon-disabled: #cacedb;
+$sidebar-item-active: #fbfbfb;
+$header-text: #767f9d;
+$user-text: #5a6169;
+$footer-text: #818ea3;
 
 //fonts
 @font-face {
-	font-family: 'Helvetica';
-	src: url('./fonts/Helvetica.ttf');
-	src: local('☺'), url('./fonts/Helvetica.ttf') format('truetype');
+  font-family: Helvetica;
+  src: url("./fonts/Helvetica.ttf") format("truetype"),
+		local("Helvetica");
+	font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype"),
+		local("Roboto");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype"),
+		local("Roboto");
 	font-weight: 400;
 	font-style: normal;
 }
 
 // mixins
 @mixin from($pixels) {
-	@media screen and (max-width: $pixels+'px') {
-		@content;
-	}
+  @media screen and (max-width: $pixels+"px") {
+    @content;
+  }
 }
 
 //media queries

@@ -18,7 +18,7 @@ const OrderPageInfo = () => {
         <AddService />
       </div>
       <div className="info__price">
-        <p className="price">4 300 ₽</p>
+        <p className="price">4 300 <span className="price__symbol">₽</span></p>
       </div>
       <div className="info__btn-group">
         <button className="info__btn info__btn_done">Готово</button>

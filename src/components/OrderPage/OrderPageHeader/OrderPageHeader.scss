@@ -10,7 +10,6 @@
   background-color: #fff;
   border-radius: 9px 9px 0 0;
   border-bottom: 1px solid #E0E2E8;
-  // box-shadow: 0 1px 20px 5px rgba($color: #5A6169, $alpha: .2);
   @include from($mobile) {
     height: fit-content;
   }

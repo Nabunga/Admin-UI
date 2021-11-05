@@ -23,7 +23,6 @@ const OrderPage = () => {
               <OrderPageInfo />
               <OrderPagination />
             </div>
-            
           </div>
         </main>
         <footer>
