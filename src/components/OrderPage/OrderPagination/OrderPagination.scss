@@ -1,0 +1,36 @@
+.order-card {
+  &__paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    min-height: 60px;
+    border-radius: 0 0 9px 9px;
+  }
+}
+
+.ant-pagination-item {
+  border: none;
+}
+
+.ant-pagination-item a {
+  color: #007BFF;
+}
+
+.ant-pagination-item-active a {
+  color: #fff !important;
+  background-color: #007BFF;
+  border-radius: 50%;
+  font-family: "Helvetica";
+  font-weight: 400;
+  font-size: 1.5rem;
+  border-color: #fff;
+}
+
+.ant-pagination-item-ellipsis {
+  color: #007BFF !important;
+}
+
+.anticon svg {
+  color: #007BFF;
+}

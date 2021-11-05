@@ -13,6 +13,10 @@ a:focus,a:active{outline: none;}
 
 nav,footer,header,aside{display: block;}
 
+p {
+	margin: 0;
+}
+
 html,body{
 	height: 100%;
 	width: 100%;
@@ -33,4 +37,4 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400; margin:0}
