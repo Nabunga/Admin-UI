@@ -19,7 +19,12 @@ const OrderPage = () => {
           <h2 className="order-header">Заказы</h2>
           <div className="order-card">
             <div className="order-card__shadow">
-              <OrderPageHeader />
+              <OrderPageHeader 
+                dropdownTextOne="За неделю" 
+                dropdownTextTwo="Модель" 
+                dropdownTextThree="Город" 
+                dropdownTextFour="Статус" 
+              />
               <OrderPageInfo />
               <OrderPagination />
             </div>

@@ -6,7 +6,6 @@ import {ReactComponent as CountNotificationIcon} from '../../assets/count.svg';
 import {ReactComponent as DropdownIcon} from '../../assets/dropdown.svg';
 import Avatar from '../../assets/avatar.png'
 
-
 const Header = () => {
   return (
     <div className="header">

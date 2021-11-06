@@ -21,5 +21,8 @@
   &_red {
     color: #fff;
     background-color: $red;
+    &-entities {
+      margin-right: 15px;
+    }
   }
 }
