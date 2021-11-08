@@ -1,0 +1,51 @@
+@import '../../styles/main.scss';
+
+.sidebar {
+  max-width: 285px;
+  width: 25%;
+  height: 100vh;
+  position: sticky;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  box-shadow: 1px 0 45px 5px rgba($color: #5A6169, $alpha: .2);
+  @include from($tablet) {
+    max-width: 58px;
+  }
+  @include from(425) {
+    display: none;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 25px 0 50px;
+    height: 68px;
+    box-shadow: 1px 1px 0px 0px #E1E5EB;
+    @include from($tablet) {
+      padding-left: 19px;
+      padding-right: 0;
+    } 
+  }
+  &__logo {
+    width: 22px;
+    height: 22px;
+  }
+  &__header-text {
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $text;
+    margin-left: 7px;
+    @include from($tablet) {
+      display: none;
+    }
+  }
+}
+
+.item-icon_disabled path {
+  fill: $sidebar-icon-disabled;
+}
+
+.item-icon_enabled path {
+  fill: $blue;
+}

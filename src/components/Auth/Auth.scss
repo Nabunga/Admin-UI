@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .auth {
   &__wrapper {
@@ -26,9 +26,10 @@
     }
   }
   &__link {
-    font-family: "Roboto";
+    font-family: "Helvetica";
     font-weight: 400;
     color: $blue;
+    background-color: #fff;
   }
   &__footer {
     display: flex;
@@ -42,7 +43,7 @@
 
 .header {
   &__text {
-    font-family: "Roboto";
+    font-family: "Helvetica";
     font-weight: 400;
     font-size: 2.4rem;
     color: $text;
@@ -55,31 +56,10 @@
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    font-family: "Roboto";
+    font-family: "Helvetica";
     font-weight: 400;
     font-size: 1.75rem;
     color: $text;
-  }
-  &__label-text {
-    font-family: "Roboto";
-    font-weight: 400;
-    color: $form-text;
-    margin-top: 15px;
-  }
-  &__input {
-    width: 340px;
-    height: 30px;
-    border: 1px solid $form-input-color;
-    border-radius: 3px;
-    margin-top: 8px;
-    padding: 8px 0 8.5px 11px;
-    font-family: "Roboto";
-    font-weight: 400;
-    color: $form-text;
-    font-size: 1.1rem;
-    @include from($mobile) {
-      width: 245px;
-    }
   }
 }
 

@@ -1,0 +1,46 @@
+@import "../../styles/main.scss";
+
+.app-wrapper {
+  display: flex;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+  background-color: #f5f6f8;
+  padding: 29px 20px 0 32px;
+  @include from(425) {
+    padding-bottom: 70px;
+  }
+}
+
+.order-header {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 2.9rem;
+  color: $text;
+  margin-bottom: 29px;
+}
+
+.order-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  max-width: 1062px;
+  padding-right: 25px;
+}
+
+.order-card__shadow {
+  max-width: 1062px;
+  border-radius: 9px;
+  box-shadow: 0 0 20px 10px rgba($color: #5A6169, $alpha: .2);
+}
