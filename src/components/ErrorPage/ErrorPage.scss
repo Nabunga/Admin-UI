@@ -1,0 +1,40 @@
+@import '../../styles/main.scss';
+
+.error-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include from(425) {
+    padding-bottom: 355px;
+  }
+}
+
+.error-page {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  &__error-code {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 7.5rem;
+    color: $sidebar-icon-disabled;
+    letter-spacing: -5px;
+  }
+  &__header {
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    color: $text;
+    margin-top: 12px;
+  }
+  &__text {
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: $footer-text;
+    margin-top: 15px;
+    margin-bottom: 35px;
+  }
+}

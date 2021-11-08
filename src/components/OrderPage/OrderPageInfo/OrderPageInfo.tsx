@@ -15,7 +15,10 @@ const OrderPageInfo = () => {
         <p className="details__color">Цвет: <span className="details_bold">Голубой</span></p>
       </div>
       <div className="info__additionals">
-        <AddService />
+        <AddService divClassName="add-service" name="first" labelClassName="add-service__label" content="Полный бак"/>
+        <AddService divClassName="add-service" name="second" labelClassName="add-service__label" content="Детское кресло"/>
+        <AddService divClassName="add-service" name="third" labelClassName="add-service__label" content="Правый руль"/>
+        
       </div>
       <div className="info__price">
         <p className="price">4 300 <span className="price__symbol">₽</span></p>

@@ -1,22 +1,16 @@
 import React, { FC } from 'react';
 import './Input.scss';
-
-interface InputProps {
-  labelClassName: string,
-  htmlFor: string,
-  labelText: string,
-  inputClassName: string,
-  inputType: string,
-  inputName: string
-}
+import { InputProps } from '../../interfaces/interfaces';
 
 const Input: FC<InputProps> = ({ labelClassName, htmlFor, labelText, inputClassName, inputType, inputName }) => {
   return (
     <>
+    <div className="input-wrapper">
       <label className={labelClassName} htmlFor={htmlFor}>
         {labelText}
       </label>
       <input className={inputClassName} type={inputType} name={inputName} />
+    </div>
     </>
   )
 }
