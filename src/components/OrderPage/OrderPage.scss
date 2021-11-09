@@ -7,8 +7,15 @@
 .content-wrapper {
   display: flex;
   flex-flow: column;
-  width: 100%;
+  // width: calc(100% - 285px);
+  width: 80%;
   min-height: 100%;
+  @include from($tablet) {
+    width: 94%;
+  }
+  @include from(445) {
+    width: 100%;
+  }
 }
 
 .main {
@@ -17,8 +24,8 @@
   flex: 1 1 auto;
   height: 100%;
   background-color: #f5f6f8;
-  padding: 29px 0 0 32px;
-  @include from(425) {
+  padding: 29px 20px 0 32px;
+  @include from(445) {
     padding-bottom: 70px;
   }
 }
@@ -35,11 +42,11 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  max-width: 1062px;
-  padding-right: 25px;
+  width: 100%;
 }
 
 .order-card__shadow {
+  width: 100%;
   border-radius: 9px;
   box-shadow: 0 0 20px 10px rgba($color: #5A6169, $alpha: .2);
 }

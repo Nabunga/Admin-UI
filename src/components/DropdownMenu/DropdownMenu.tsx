@@ -1,12 +1,9 @@
 import React, { FC } from "react";
 import './DropdownMenu.scss';
 import { Menu, Dropdown, Button } from 'antd';
+import { DropdownMenuProps } from "../../interfaces/interfaces";
 
-interface DropdownMenuProps {
-  btnText: string
-}
-
-const DropdownMenu: FC<DropdownMenuProps> = ({btnText}) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({ btnText }) => {
 
   const menu = (
     <Menu>

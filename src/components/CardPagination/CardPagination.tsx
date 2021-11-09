@@ -1,9 +1,8 @@
 import React from "react";
-import './OrderPagination.scss';
+import './CardPagination.scss';
 import { Pagination } from 'antd';
 
-
-const OrderPagination = () => {
+const CardPagination = () => {
   return (
     <div className="order-card__paginator">
       <Pagination defaultCurrent={6} total={500} showSizeChanger={false} size={'small'} />
@@ -11,4 +10,4 @@ const OrderPagination = () => {
   )
 }
 
-export default OrderPagination;
+export default CardPagination;

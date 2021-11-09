@@ -1,8 +1,8 @@
 @import '../../styles/main.scss';
 
 .sidebar {
-  max-width: 285px;
-  width: 25%;
+  // max-width: 285px;
+  width: 20%;
   height: 100vh;
   position: sticky;
   display: flex;
@@ -10,9 +10,9 @@
   flex-flow: column nowrap;
   box-shadow: 1px 0 45px 5px rgba($color: #5A6169, $alpha: .2);
   @include from($tablet) {
-    max-width: 58px;
+    width: 6%;
   }
-  @include from(425) {
+  @include from(445) {
     display: none;
   }
   &__header {
@@ -22,8 +22,8 @@
     height: 68px;
     box-shadow: 1px 1px 0px 0px #E1E5EB;
     @include from($tablet) {
-      padding-left: 19px;
-      padding-right: 0;
+      padding: 0 10% 0 30%;
+      
     } 
   }
   &__logo {
