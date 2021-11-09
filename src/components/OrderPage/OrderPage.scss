@@ -42,12 +42,11 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  max-width: 1062px;
-  padding-right: 25px;
+  width: 100%;
 }
 
 .order-card__shadow {
-  max-width: 1062px;
+  width: 100%;
   border-radius: 9px;
   box-shadow: 0 0 20px 10px rgba($color: #5A6169, $alpha: .2);
 }

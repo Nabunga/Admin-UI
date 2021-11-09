@@ -1,18 +1,11 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import './CardHeader.scss';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
 import { ReactComponent as BtnDropdownIcon } from '../../assets/btn-dropdown.svg';
 import MainButton from '../MainButton/MainButton';
+import { CardHeaderProps } from "../../interfaces/interfaces";
 
-interface CardHeaderProps {
-  rejectBtn?: React.Component | ReactNode,
-  dropdownTextOne: string,
-  dropdownTextTwo: string,
-  dropdownTextThree: string,
-  dropdownTextFour: string,
-}
-
-const CardHeader: FC<CardHeaderProps> = ({rejectBtn, dropdownTextOne, dropdownTextTwo, dropdownTextThree, dropdownTextFour, }) => {
+const CardHeader: FC<CardHeaderProps> = ({ rejectBtn, dropdownTextOne, dropdownTextTwo, dropdownTextThree, dropdownTextFour }) => {
   return (
     <div className="order-card__header">
       <div className="dropdown-btn-group">

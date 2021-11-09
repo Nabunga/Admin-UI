@@ -2,7 +2,6 @@ import React from "react";
 import './CardPagination.scss';
 import { Pagination } from 'antd';
 
-
 const CardPagination = () => {
   return (
     <div className="order-card__paginator">

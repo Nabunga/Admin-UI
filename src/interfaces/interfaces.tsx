@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface AddServiceProps {
   divClassName: string,
   name: string,
@@ -21,4 +23,12 @@ export interface InputProps {
 
 export interface DropdownMenuProps {
   btnText: string
+}
+
+export interface CardHeaderProps {
+  rejectBtn?: React.Component | ReactNode,
+  dropdownTextOne: string,
+  dropdownTextTwo: string,
+  dropdownTextThree: string,
+  dropdownTextFour: string,
 }

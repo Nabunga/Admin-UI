@@ -79,7 +79,7 @@
   width: 80%;
   background-color: $main-accent;
   color: #fff;
-  visibility: visible;
+  visibility: hidden;
   @include from($tablet) {
     width: 94%;
   }
