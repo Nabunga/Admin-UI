@@ -1,18 +1,11 @@
-import React, { FC, ReactNode } from "react";
-import './OrderPageHeader.scss';
-import DropdownMenu from '../../DropdownMenu/DropdownMenu';
-import { ReactComponent as BtnDropdownIcon } from '../../../assets/btn-dropdown.svg';
-import MainButton from '../../MainButton/MainButton';
+import React, { FC } from "react";
+import './CardHeader.scss';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import { ReactComponent as BtnDropdownIcon } from '../../assets/btn-dropdown.svg';
+import MainButton from '../MainButton/MainButton';
+import { CardHeaderProps } from "../../interfaces/interfaces";
 
-interface OrderPageHeaderProps {
-  rejectBtn?: React.Component | ReactNode,
-  dropdownTextOne: string,
-  dropdownTextTwo: string,
-  dropdownTextThree: string,
-  dropdownTextFour: string,
-}
-
-const OrderPageHeader: FC<OrderPageHeaderProps> = ({rejectBtn, dropdownTextOne, dropdownTextTwo, dropdownTextThree, dropdownTextFour, }) => {
+const CardHeader: FC<CardHeaderProps> = ({ rejectBtn, dropdownTextOne, dropdownTextTwo, dropdownTextThree, dropdownTextFour }) => {
   return (
     <div className="order-card__header">
       <div className="dropdown-btn-group">
@@ -41,4 +34,4 @@ const OrderPageHeader: FC<OrderPageHeaderProps> = ({rejectBtn, dropdownTextOne, 
   )
 }
 
-export default OrderPageHeader;
+export default CardHeader;

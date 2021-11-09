@@ -19,32 +19,29 @@ $footer-text: #818ea3;
 //fonts
 @font-face {
   font-family: Helvetica;
-  src: url("./fonts/Helvetica.ttf") format("truetype"),
-		local("Helvetica");
-	font-style: normal;
+  src: url("./fonts/Helvetica.ttf") format("truetype"), local("Helvetica");
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("./fonts/Roboto-Medium.ttf") format("truetype"),
-		local("Roboto");
-	font-weight: 500;
-	font-style: normal;
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype"), local("Roboto");
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("./fonts/Roboto-Regular.ttf") format("truetype"),
-		local("Roboto");
-	font-weight: 400;
-	font-style: normal;
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype"), local("Roboto");
+  font-weight: 400;
+  font-style: normal;
 }
 
 // mixins
 @mixin from($pixels) {
-  @media screen and (max-width: $pixels+"px") {
-    @content;
-  }
+	@media screen and (max-width: ($pixels + "px")) {
+		@content;
+	}
 }
 
 //media queries

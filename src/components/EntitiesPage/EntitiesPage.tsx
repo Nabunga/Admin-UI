@@ -3,10 +3,10 @@ import './EntitiesPage.scss';
 import Sidebar from "../Sidebar/Sidebar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import OrderPageHeader from "../OrderPage/OrderPageHeader/OrderPageHeader";
+import CardHeader from "../CardHeader/CardHeader";
 import MainButton from "../MainButton/MainButton";
 import EntitiesMain from "./EntitiesMain/EntitiesMain";
-import OrderPagination from "../OrderPage/OrderPagination/OrderPagination";
+import CardPagination from "../CardPagination/CardPagination";
 
 const EntitiesPage = () => {
   return (
@@ -17,8 +17,9 @@ const EntitiesPage = () => {
           <Header />
         </header>
         <main className="main">
+          <h2 className="order-header">Entities</h2>
           <div className="order-card__shadow">
-            <OrderPageHeader
+            <CardHeader
               dropdownTextOne="Field"
               dropdownTextTwo="Field"
               dropdownTextThree="Field"
@@ -26,7 +27,7 @@ const EntitiesPage = () => {
               rejectBtn={<MainButton btnText="Отмена" btnClassName="btn btn_red btn_red-entities" />}
             />
             <EntitiesMain />
-            <OrderPagination />
+            <CardPagination />
           </div>
         </main>
         <footer>

@@ -1,0 +1,11 @@
+@import '../../styles/main.scss';
+
+.car-setting__content {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 85%;
+  @include from($mobile) {
+    flex-flow: column nowrap;
+  }
+}
+

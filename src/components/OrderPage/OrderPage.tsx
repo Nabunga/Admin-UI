@@ -3,9 +3,9 @@ import './OrderPage.scss';
 import Sidebar from '../Sidebar/Sidebar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import OrderPageHeader from './OrderPageHeader/OrderPageHeader';
+import CardHeader from '../CardHeader/CardHeader';
 import OrderPageInfo from './OrderPageInfo/OrderPageInfo';
-import OrderPagination from './OrderPagination/OrderPagination';
+import CardPagination from '../CardPagination/CardPagination';
 
 const OrderPage = () => {
   return (
@@ -19,14 +19,14 @@ const OrderPage = () => {
           <h2 className="order-header">Заказы</h2>
           <div className="order-card">
             <div className="order-card__shadow">
-              <OrderPageHeader 
+              <CardHeader 
                 dropdownTextOne="За неделю" 
                 dropdownTextTwo="Модель" 
                 dropdownTextThree="Город" 
                 dropdownTextFour="Статус" 
               />
               <OrderPageInfo />
-              <OrderPagination />
+              <CardPagination />
             </div>
           </div>
         </main>
