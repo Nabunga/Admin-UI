@@ -3,7 +3,7 @@ import './CardHeader.scss';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
 import { ReactComponent as BtnDropdownIcon } from '../../assets/btn-dropdown.svg';
 import MainButton from '../MainButton/MainButton';
-import { CardHeaderProps } from "../../interfaces/interfaces";
+import { CardHeaderProps } from "../../types/components";
 
 const CardHeader: FC<CardHeaderProps> = ({ rejectBtn, dropdownTextOne, dropdownTextTwo, dropdownTextThree, dropdownTextFour }) => {
   return (

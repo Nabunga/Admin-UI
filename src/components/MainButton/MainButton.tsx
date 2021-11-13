@@ -1,9 +1,9 @@
 import React, {FC} from "react";
 import './MainButton.scss';
-import { MainButtonProps } from "../../interfaces/interfaces";
+import { MainButtonProps } from "../../types/components";
 
-const MainButton: FC<MainButtonProps> = ({ btnText, btnClassName }) => {
-  return <button className={btnClassName}>{btnText}</button>
+const MainButton: FC<MainButtonProps> = ({ btnText, btnClassName, clickHandle }) => {
+  return <button className={btnClassName} onClick={clickHandle}>{btnText}</button>
 };
 
 export default MainButton;

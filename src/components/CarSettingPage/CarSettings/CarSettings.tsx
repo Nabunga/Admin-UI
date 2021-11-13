@@ -19,36 +19,33 @@ const CarSettings = () => {
         <div className="car-settings__content">
           <div className="top-inputs">
             <div className="top-inputs_left">
-              <Input
+              {/* <Input
                 labelClassName="car-settings__input-label"
                 labelText="Модель автомобиля"
-                htmlFor="car-model"
+                name="car-model"
                 inputClassName="car-settings__input"
                 inputType="text"
-                inputName="car-model"
-              />
+              /> */}
             </div>
             <div className="top-inputs_right">
-              <Input
+              {/* <Input
                 labelClassName="car-settings__input-label"
                 labelText="Тип автомобиля"
-                htmlFor="car-type"
+                name="car-type"
                 inputClassName="car-settings__input"
                 inputType="text"
-                inputName="car-type"
-              />
+              /> */}
             </div>
           </div>
           <div className="car-settings__colors">
             <div className="input-width">
-              <Input
+              {/* <Input
                 labelClassName="car-settings__input-label"
                 labelText="Доступные цвета"
-                htmlFor="available-colors"
+                name="available-colors"
                 inputClassName="car-settings__input-colors color-input"
                 inputType="text"
-                inputName="available-colors"
-              />
+              /> */}
             </div>
             <ColorPlusBtn className="btn-add-colors" />
           </div>
