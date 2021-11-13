@@ -1,8 +1,9 @@
 import React, {FC} from "react";
 import "./AddService.scss";
-import { AddServiceProps } from "../../interfaces/interfaces";
+import { AddServiceProps } from "../../types/components";
 
 const AddService: FC<AddServiceProps> = ({ divClassName, name, labelClassName, content }) => {
+ 
   return (
     <div className={divClassName}>
 
