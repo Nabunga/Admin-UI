@@ -8,6 +8,3 @@ export const axiosInstanse = axios.create({
     "Authorization": "Basic aGFzaDo0Y2JjZWE5NmRl"
   },
 })
-
-
-// aGFzaDo0Y2JjZWE5NmRl

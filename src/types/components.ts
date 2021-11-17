@@ -13,6 +13,13 @@ export interface MainButtonProps {
   clickHandle?: any;
 }
 
+export interface SidebarNavItemProps {
+  navItemIcon: React.ReactChild | React.ReactNode;
+  navItemText: string;
+  id: string;
+  onClick: any;
+}
+
 export interface InputProps {
   labelClassName: string;
   name: string;
@@ -20,7 +27,7 @@ export interface InputProps {
   inputClassName: string;
   inputType: string;
   inputHandler?: any;
-  value: string;
+  value: string | number;
 }
 
 export interface DropdownMenuProps {

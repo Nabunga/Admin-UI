@@ -1,7 +1,6 @@
 @import '../../styles/main.scss';
 
 .sidebar {
-  // max-width: 285px;
   width: 20%;
   height: 100vh;
   position: sticky;
@@ -47,5 +46,5 @@
 }
 
 .item-icon_enabled path {
-  fill: $blue;
+  fill: #007BFF;
 }

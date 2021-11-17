@@ -5,16 +5,16 @@ import MainButton from '../MainButton/MainButton';
 import Input from '../Input/Input';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { Dispatch } from "react"
 import { axiosInstanse } from "../../apis/axios"
-import { AuthAction, AuthActionTypes } from "../../store/types/auth"
+import { AuthActionTypes } from "../../store/types/auth"
+import { SidebarActionTypes } from '../../store/types/sidebarSteps';
 
 const Auth = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const logIn = (username: string, password: string) => {
-    return async (dispatch: Dispatch<AuthAction>) => {
+    return async (dispatch: any) => {
       try {
         const response = await axiosInstanse.post('/auth/login', {
           username: username,
@@ -22,6 +22,7 @@ const Auth = () => {
         })
         localStorage.setItem('access_token', JSON.stringify(response.data.access_token))
         dispatch({ type: AuthActionTypes.AUTH_SET_ACCESS_TOKEN, payload: response.data.access_token })
+        dispatch({ type: SidebarActionTypes.SIDEBAR_SET_CURRENT_INDEX, payload: "1" })
         history.push("/car-setting")
       } catch (error) {
         dispatch({ type: AuthActionTypes.AUTH_CATCH_REQUEST_ERROR, payload: "Ошибка авторизации" })
