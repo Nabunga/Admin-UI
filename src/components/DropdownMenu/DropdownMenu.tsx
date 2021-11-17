@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import './DropdownMenu.scss';
 import { Menu, Dropdown, Button } from 'antd';
-import { DropdownMenuProps } from "../../interfaces/interfaces";
+import { DropdownMenuProps } from "../../types/components";
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ btnText }) => {
 

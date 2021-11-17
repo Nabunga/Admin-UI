@@ -1,6 +1,7 @@
 @import '../../../styles/main.scss';
 
 .sidebar-item {
+  
   display: flex;
   width: 100%;
   flex: 1 1 auto;
@@ -28,3 +29,11 @@
   }
 }
 
+.sidebar-item_active {
+  background-color: $sidebar-item-active;
+  border-left: 4px solid #007BFF;
+}
+
+.sidebar-item__text_active {
+  color: #007BFF;
+}

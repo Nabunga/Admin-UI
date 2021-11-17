@@ -1,15 +1,17 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './Input.scss';
-import { InputProps } from '../../interfaces/interfaces';
+import { InputProps } from '../../types/components';
 
-const Input: FC<InputProps> = ({ labelClassName, htmlFor, labelText, inputClassName, inputType, inputName }) => {
+const Input: React.FC<InputProps> = ({ labelClassName, name, labelText, inputClassName, inputType, inputHandler, value }) => {
+  
+ 
   return (
     <>
     <div className="input-wrapper">
-      <label className={labelClassName} htmlFor={htmlFor}>
+      <label className={labelClassName} htmlFor={name}>
         {labelText}
       </label>
-      <input className={inputClassName} type={inputType} name={inputName} />
+      <input className={inputClassName} type={inputType} name={name} value={value} onChange={inputHandler} />
     </div>
     </>
   )
