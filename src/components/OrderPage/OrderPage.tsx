@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './OrderPage.scss';
 import Sidebar from '../Sidebar/Sidebar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import CardHeader from '../CardHeader/CardHeader';
-import OrderPageInfo from './OrderPageInfo/OrderPageInfo';
+import OrderPageCardHeader from './OrderPageCardHeader/OrderPageCardHeader'
 import CardPagination from '../CardPagination/CardPagination';
+import OrderPageInfo from './OrderPageInfo/OrderPageInfo';
 
-const OrderPage = () => {
+const OrderPage: FC = () => {
   return (
     <div className="app-wrapper">
       <Sidebar />
@@ -19,13 +19,10 @@ const OrderPage = () => {
           <h2 className="order-header">Заказы</h2>
           <div className="order-card">
             <div className="order-card__shadow">
-              <CardHeader 
-                dropdownTextOne="За неделю" 
-                dropdownTextTwo="Модель" 
-                dropdownTextThree="Город" 
-                dropdownTextFour="Статус" 
-              />
-              <OrderPageInfo />
+              <OrderPageCardHeader />
+              <div className="order-card__info-wrapper">
+                <OrderPageInfo />
+              </div>
               <CardPagination />
             </div>
           </div>

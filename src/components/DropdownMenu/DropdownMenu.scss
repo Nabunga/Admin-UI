@@ -1,6 +1,6 @@
 .ant-btn.ant-dropdown-trigger {
   border-radius: 4px;
-  width: 110px;
+  min-width: 125px;
   height: 29px;
   font-family: "Helvetica";
   font-weight: 400;
@@ -9,4 +9,9 @@
   box-shadow: none;
   border: .5px solid #BECAD6;
   text-align: left;
+}
+
+.dropdown-btn {
+  background-color: #fff;
+  width: 100%;
 }

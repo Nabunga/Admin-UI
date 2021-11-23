@@ -38,6 +38,8 @@ export const carSettingsReducer = (state = initialState, action: CarSettingsActi
       return {...state, createdCarId: action.payload}
     case CarSettingsActionTypes.CAR_SETTINGS_SET_SUCCESS_ALERT_IS_VISIBLE:
       return {...state, successAlertIsVisible: action.payload}
+    case CarSettingsActionTypes.CAR_SETTINGS_RESET:
+      return {...state, priceMin: 0, priceMax: 0, categoryId: "", colors: [], description: "", imgBase64: "", imgParameters: "", name: "", newColor: ""}
     default:
       return state
   }

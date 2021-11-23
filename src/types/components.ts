@@ -5,6 +5,7 @@ export interface AddServiceProps {
   name: string;
   labelClassName: string;
   content: string;
+  checked?: boolean;
 }
 
 export interface MainButtonProps {
@@ -36,8 +37,4 @@ export interface DropdownMenuProps {
 
 export interface CardHeaderProps {
   rejectBtn?: React.Component | ReactNode,
-  dropdownTextOne: string;
-  dropdownTextTwo: string;
-  dropdownTextThree: string;
-  dropdownTextFour: string;
 }

@@ -15,7 +15,7 @@ const CarSettings = () => {
   const { name, categoryId, priceMin, priceMax, colors, newColor, description, imgBase64, imgParameters, createdCarId } = useTypedSelector(state => state.carSettings)
 
   const renderedColors = colors.map(color => {
-    return <AddService key={color} divClassName="add-service" name="car-settings-first" labelClassName="add-service__label" content={color} />
+    return <AddService key={color} divClassName="add-service" name="car-settings-first" labelClassName="add-service__label" content={color} checked={true} />
   })
 
   let addCar = {
@@ -37,6 +37,8 @@ const CarSettings = () => {
 
   const accTok: any = localStorage.getItem("access_token")
   const token = JSON.parse(accTok);
+  console.log(token);
+  
   
   const addNewCar = (token: string, carParams: any) => {
     return async (dispatch: any) => {
@@ -48,6 +50,9 @@ const CarSettings = () => {
       })
         dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_CREATED_CAR_ID, payload: response.data.data.id})
         dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_SUCCESS_ALERT_IS_VISIBLE, payload: true})
+        setTimeout(() => {
+          dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_SUCCESS_ALERT_IS_VISIBLE, payload: false})
+        }, 2000)
       } catch (error) {
         alert(error)
       }
@@ -74,15 +79,7 @@ const CarSettings = () => {
   }
 
   const rejectHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_PRICE_MAX, payload: 0})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_PRICE_MIN, payload: 0})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_CATEGORY_ID, payload: ""})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_COLORS, payload: []})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_DESCRIPTION, payload: ""})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_IMG_BASE64, payload: ""})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_IMG_PARAMETERS, payload: ""})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_NAME, payload: ""})
-    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_SET_NEW_COLOR, payload: ""})
+    dispatch({type: CarSettingsActionTypes.CAR_SETTINGS_RESET})
   }
 
   const deleteCarHandler = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -24,6 +24,7 @@ export enum CarSettingsActionTypes {
   CAR_SETTINGS_SET_NEW_COLOR = 'CAR_SETTINGS_SET_NEW_COLOR',
   CAR_SETTINGS_SET_CREATED_CAR_ID = 'CAR_SETTINGS_SET_CREATED_CAR_ID',
   CAR_SETTINGS_SET_SUCCESS_ALERT_IS_VISIBLE = 'CAR_SETTINGS_SET_SUCCESS_ALERT_IS_VISIBLE',
+  CAR_SETTINGS_RESET = 'CAR_SETTINGS_RESET',
 }
 
 interface CarSettingsSetPriceMaxAction {
@@ -71,4 +72,8 @@ interface CarSettingsSetSuccessAlertIsVisibleAction {
   payload: boolean;
 }
 
-export type CarSettingsAction = CarSettingsSetPriceMaxAction | CarSettingsSetPriceMinAction | CarSettingsSetNameAction | CarSettingsSetImgBase64Action | CarSettingsSetDescriptionAction | CarSettingsSetCategoryIdAction | CarSettingsSetColorsAction | CarSettingsSetNewColorAction | CarSettingsSetImgParametersAction | CarSettingsSetCreatedCarIdAction | CarSettingsSetSuccessAlertIsVisibleAction
+interface CarSettingsResetAction {
+  type: CarSettingsActionTypes.CAR_SETTINGS_RESET;
+}
+
+export type CarSettingsAction = CarSettingsSetPriceMaxAction | CarSettingsSetPriceMinAction | CarSettingsSetNameAction | CarSettingsSetImgBase64Action | CarSettingsSetDescriptionAction | CarSettingsSetCategoryIdAction | CarSettingsSetColorsAction | CarSettingsSetNewColorAction | CarSettingsSetImgParametersAction | CarSettingsSetCreatedCarIdAction | CarSettingsSetSuccessAlertIsVisibleAction | CarSettingsResetAction 
