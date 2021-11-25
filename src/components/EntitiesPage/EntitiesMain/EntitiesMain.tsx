@@ -1,39 +1,81 @@
-import React from "react";
+import React, { FC } from "react";
 import './EntitiesMain.scss';
 import { Table } from 'antd';
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
-const EntitiesMain = () => {
+const EntitiesMain: FC = () => {
 
-  const data = [
+  const { allCars,carsByCategory } = useTypedSelector(state => state.entities)
+
+  const renderedAllCars = allCars?.map((car) => {
+    return {
+      key: car.id,
+      id: car.id,
+      modelCar: car.name,
+      classCar: car.categoryId,
+      regSign: car.number,
+      minPrice: car.priceMin,
+      maxPrice: car.priceMax,
+      colors: car.colors,
+      description: car.description,
+      thumbnail: car.thumbnail,
+    }
+  })
+
+  const renderedCarsByCategory = carsByCategory?.map((car) => {
+    return {
+      key: car.id,
+      id: car.id,
+      modelCar: car.name,
+      classCar: car.categoryId,
+      regSign: car.number,
+      minPrice: car.priceMin,
+      maxPrice: car.priceMax,
+      colors: car.colors,
+      description: car.description,
+      thumbnail: car.thumbnail,
+    }
+  })
+
+  const columns = [
     {
-      key: 1,
-      Header: 19.291,
+      title: 'Модель',
+      dataIndex: 'thumbnail',
+      key: 'thumbnail',
+      render: (thumbUrl: any) => (
+        <img
+          src={(thumbUrl?.path.includes('base64')) ? thumbUrl.path : 'https://api-factory.simbirsoft1.com' + thumbUrl.path}
+          alt="car"
+          style={{ height: '30px' }}
+        />
+      ), 
     },
     {
-      key: 2,
-      Header: 19.291,
+      title: 'Название',
+      dataIndex: 'modelCar',
+      key: 'modelCar',
     },
     {
-      key: 2,
-      Header: 19.291,
+      title: 'Категория',
+      dataIndex: 'classCar',
+      key: 'classCar',
+      render: (categoryId: any) => categoryId?.name
     },
     {
-      key: 2,
-      Header: 19.291,
+      title: 'Номер',
+      key: 'regSign',
+      dataIndex: 'regSign',
     },
     {
-      key: 2,
-      Header: 19.291,
+      title: 'Мин. цена',
+      key: 'minPrice',
+      dataIndex: 'minPrice',
     },
     {
-      key: 2,
-      Header: 19.291,
+      title: 'Максимальная цена',
+      key: 'maxPrice',
+      dataIndex: 'maxPrice',
     },
-    {
-      key: 2,
-      Header: 19.291,
-    },
-    
   ];
 
   const scroll = {
@@ -42,15 +84,7 @@ const EntitiesMain = () => {
   }
 
   return (
-    <Table dataSource={data} pagination={false} scroll={scroll}>
-      <Table.Column key="1" title="Header" dataIndex="Header"/>
-      <Table.Column key="2" title="Header" dataIndex="Header"/>
-      <Table.Column key="3" title="Header" dataIndex="Header"/>
-      <Table.Column key="4" title="Header" dataIndex="Header"/>
-      <Table.Column key="5" title="Header" dataIndex="Header"/>
-      <Table.Column key="6" title="Header" dataIndex="Header"/>
-      <Table.Column key="7" title="Header" dataIndex="Header"/>
-    </Table>
+    <Table dataSource={carsByCategory.length === 0 ? renderedAllCars : renderedCarsByCategory} pagination={false} scroll={scroll} columns={columns} />
   )
 };
 

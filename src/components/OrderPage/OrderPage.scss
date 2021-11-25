@@ -50,3 +50,8 @@
   border-radius: 9px;
   box-shadow: 0 0 20px 10px rgba($color: #5A6169, $alpha: .2);
 }
+
+.order-card__info-wrapper{
+  max-height: 400px;
+  overflow-y: scroll;
+}

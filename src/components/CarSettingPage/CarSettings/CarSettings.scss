@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0 18px;
   }
   &__input-label {
@@ -27,6 +27,7 @@
     font-weight: 400;
     font-size: 1.15rem;
     color: #000;
+    margin-top: 10px;
   }
   &__input {
     max-width: 320px;
@@ -82,7 +83,7 @@
 }
 
 .btn-add-colors {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .settings-header {
@@ -95,11 +96,22 @@
 
 .top-inputs {
   display: flex;
+  flex-wrap: wrap;
   &_left {
     width: 50%;
   }
   &_right {
     width: 50%;
   }
+}
 
+.description-area {
+  border: 1px solid #becad6;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 96%;
+  &__textarea {
+    width: 100%;
+    padding: 5px 0 0 10px;
+  }
 }

@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
 import './SidebarNavItem.scss';
+import { SidebarNavItemProps } from '../../../types/components';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
-interface SidebarNavItemProps {
-  navItemIcon: React.ReactChild | React.ReactNode,
-  navItemText: string
-}
-
-const SidebarNavItem: FC<SidebarNavItemProps> = ({ navItemIcon, navItemText }) => {
+const SidebarNavItem: React.FC<SidebarNavItemProps> = ({ navItemIcon, navItemText, id, onClick }) => {
+  
+  const {currentTabIndex} = useTypedSelector(state => state.sidebar)
+  
   return (
-    <div className="sidebar-item">
+    <div id={id} className={currentTabIndex === id ? "sidebar-item sidebar-item_active" : "sidebar-item"} onClick={onClick}>
       {navItemIcon}
-      <p className="sidebar-item__text">{navItemText}</p>
+      <p id={id} className={currentTabIndex === id ? "sidebar-item__text sidebar-item__text_active" : "sidebar-item__text"}>{navItemText}</p>
     </div>
   )
 };
