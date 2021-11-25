@@ -1,6 +1,7 @@
 export interface EntitiesState {
   category: any[];
   allCars: any[];
+  carsCount: number | undefined;
   selectedCategory: string | null;
   selectedCategoryName: string;
   carsByCategory: any[];
@@ -12,6 +13,7 @@ export enum EntitiesActionTypes {
   ENTITIES_SET_SELECTED_CATEGORY = "ENTITIES_SET_SELECTED_CATEGORY",
   ENTITIES_SET_CARS_BY_CATEGORY = "ENTITIES_SET_CARS_BY_CATEGORY",
   ENTITIES_SET_SELECTED_CATEGORY_NAME = "ENTITIES_SET_SELECTED_CATEGORY_NAME",
+  ENTITIES_SET_CARS_COUNT = "ENTITIES_SET_CARS_COUNT",
 }
 
 interface EntitiesSetCategoryAction {
@@ -39,4 +41,9 @@ interface EntitiesSetSelectedCategoryNameAction {
   payload: string;
 }
 
-export type EntitiesAction = EntitiesSetCategoryAction | EntitiesSetAllCarsAction | EntitiesSetSelectedCategoryAction | EntitiesSetCarsByCategoryAction | EntitiesSetSelectedCategoryNameAction
+interface EntitiesSetCarsCountAction {
+  type: EntitiesActionTypes.ENTITIES_SET_CARS_COUNT;
+  payload: number;
+}
+
+export type EntitiesAction = EntitiesSetCategoryAction | EntitiesSetAllCarsAction | EntitiesSetSelectedCategoryAction | EntitiesSetCarsByCategoryAction | EntitiesSetSelectedCategoryNameAction | EntitiesSetCarsCountAction

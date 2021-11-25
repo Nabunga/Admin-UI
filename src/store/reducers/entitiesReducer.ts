@@ -6,6 +6,7 @@ const initialState: EntitiesState = {
   selectedCategory: null,
   carsByCategory: [],
   selectedCategoryName: "Любая",
+  carsCount: undefined
 }
 
 export const entitiesReducer = (state = initialState, action: EntitiesAction): EntitiesState => {
@@ -20,6 +21,8 @@ export const entitiesReducer = (state = initialState, action: EntitiesAction): E
       return {...state, carsByCategory: action.payload}
     case EntitiesActionTypes.ENTITIES_SET_SELECTED_CATEGORY_NAME:
       return {...state, selectedCategoryName: action.payload}
+    case EntitiesActionTypes.ENTITIES_SET_CARS_COUNT:
+      return {...state, carsCount: action.payload}
     default:
       return state
   }

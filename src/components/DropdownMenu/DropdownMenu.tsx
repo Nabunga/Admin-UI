@@ -11,10 +11,11 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ btnText }) => {
   const { category, selectedCategoryName } = useTypedSelector(state => state.entities)
 
   const renderedItems = category?.map((cat) => {
+    
     return (
-      <Menu.Item id={cat?.id}>
+      <Menu.Item id={cat.name}>
         <button
-        className="dropdown-btn"
+          className="dropdown-btn"
           id={cat?.id}
           onClick={(e: React.MouseEvent) => {
             dispatch({ type: EntitiesActionTypes.ENTITIES_SET_SELECTED_CATEGORY, payload: cat.id })
@@ -26,7 +27,8 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ btnText }) => {
       </Menu.Item>
     )
   })
-
+  
+  
   const menu = (
     <Menu>
       {renderedItems}
@@ -35,7 +37,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ btnText }) => {
 
   return (
     <Dropdown overlay={menu} placement="bottomCenter">
-      <Button>{selectedCategoryName}</Button>
+      <Button id="1">{selectedCategoryName}</Button>
     </Dropdown>
   )
 };

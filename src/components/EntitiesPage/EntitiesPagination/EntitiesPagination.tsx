@@ -8,10 +8,9 @@ import { EntitiesActionTypes } from "../../../store/types/entities";
 
 const EntitiesPagination: FC = () => {
   const dispatch = useDispatch()
-  const {selectedCategory} = useTypedSelector(state => state.entities)
-  const [page, setPage] = useState(1)
-  const accTok: any = localStorage.getItem("access_token")
-  const token = JSON.parse(accTok);
+  const {selectedCategory,carsCount} = useTypedSelector(state => state.entities)
+  let [page, setPage] = useState(0)
+  
 
   const handlePagination = () => {
     const getCarsByPagination = async () => {
@@ -24,21 +23,20 @@ const EntitiesPagination: FC = () => {
       })
       dispatch({type: EntitiesActionTypes.ENTITIES_SET_ALL_CARS, payload: response.data.data})
     }
+    setPage(++page)
     getCarsByPagination()
-    setPage(page + 1)
   }
      
-  
-
   return (
     <div className="order-card__paginator">
       <Pagination 
         defaultCurrent={1} 
-        total={100} 
+        total={carsCount} 
         showSizeChanger={false} 
         size={'small'}
         pageSize={10}
         onChange={handlePagination}
+        current={page + 1}
       />
     </div>
   )

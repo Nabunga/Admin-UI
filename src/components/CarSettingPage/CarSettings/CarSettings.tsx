@@ -62,7 +62,7 @@ const CarSettings = () => {
   const deleteCar = (token: string, carId: string) => {
     return async (dispatch: any) => {
       try {
-        const response = await axiosInstanse.delete(`/db/car/${carId}`, {
+          await axiosInstanse.delete(`/db/car/${carId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

@@ -18,7 +18,7 @@ const CardHeader: FC<CardHeaderProps> = ({ rejectBtn }) => {
         const response = await axiosInstanse.get('/db/car', {
           params: {
             limit: 20,
-            page: 1,
+            page: 0,
             categoryId: selectedCategory
           }
         })

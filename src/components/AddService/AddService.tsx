@@ -7,7 +7,7 @@ const AddService: FC<AddServiceProps> = ({ divClassName, name, labelClassName, c
   return (
     <div className={divClassName}>
 
-      <input type="checkbox" name={name} id={name} checked={checked}/>
+      <input type="checkbox" name={name} id={name} defaultChecked={checked}/>
       <label className={labelClassName} htmlFor={name}>
         {content}
       </label>

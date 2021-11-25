@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import '../../CardHeader/CardHeader.scss';
 import { ReactComponent as BtnDropdownIcon } from '../../../assets/btn-dropdown.svg';
 import MainButton from '../../MainButton/MainButton';
@@ -8,26 +8,32 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { axiosInstanse } from "../../../apis/axios";
 import { OrderActionTypes } from "../../../store/types/order";
 import { useDispatch } from "react-redux";
+import { menuCars, menuCities, menuOrderStatuses, menuPeriod } from "./constants";
+import { token } from "../../../constants";
 
-const OrderPageCardHeader: FC<CardHeaderProps> = () => {
+const OrderPageCardHeader: FC<CardHeaderProps> = ({getPeriod}) => {
   const dispatch = useDispatch()
-  const {currentOrderStatus,selectedOrderStatusId} = useTypedSelector(state => state.order)
-  const accTok: any = localStorage.getItem("access_token")
-  const token = JSON.parse(accTok);
+  const {selectedOrderStatusId,currentPage,selectedCity,selectedCar,defaultOrderStatus,defaultPeriod,defaultCar,defaultCity} = useTypedSelector(state => state.order)
+  
 
   const getOrdersHandler = () => {
     const setOrders = async () => {
       const response = await axiosInstanse.get('/db/order', {
         params: {
           limit: 10,
-          page: 2,
+          page: currentPage,
           orderStatusId: selectedOrderStatusId,
+          // createdAt: getPeriod,
+          cityId: selectedCity,
+          carId: selectedCar,
         },
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
+      dispatch({type: OrderActionTypes.ORDER_SET_CURRENT_PAGE, payload: 0})
       dispatch({ type: OrderActionTypes.ORDER_SET_ALL_ORDERS, payload: response.data.data })
+      dispatch({type: OrderActionTypes.ORDER_SET_ORDERS_COUNT, payload: response.data.count})
     }
     setOrders()
   }
@@ -36,7 +42,19 @@ const OrderPageCardHeader: FC<CardHeaderProps> = () => {
     <div className="order-card__header">
       <div className="dropdown-btn-group">
         <div className="dropdown-group">
-          <OrderPageDropdownMenu btnText={currentOrderStatus} />
+          <OrderPageDropdownMenu btnText={defaultOrderStatus} menu={menuOrderStatuses}/>
+          <BtnDropdownIcon className="dropdown-group__icon" />
+        </div>
+        <div className="dropdown-group">
+          <OrderPageDropdownMenu btnText={defaultPeriod} menu={menuPeriod}/>
+          <BtnDropdownIcon className="dropdown-group__icon" />
+        </div>
+        <div className="dropdown-group">
+          <OrderPageDropdownMenu btnText={defaultCar} menu={menuCars}/>
+          <BtnDropdownIcon className="dropdown-group__icon" />
+        </div>
+        <div className="dropdown-group">
+          <OrderPageDropdownMenu btnText={defaultCity} menu={menuCities}/>
           <BtnDropdownIcon className="dropdown-group__icon" />
         </div>
       </div>

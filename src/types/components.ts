@@ -33,8 +33,10 @@ export interface InputProps {
 
 export interface DropdownMenuProps {
   btnText: string;
+  menu?: any;
 }
 
 export interface CardHeaderProps {
-  rejectBtn?: React.Component | ReactNode,
+  rejectBtn?: React.Component | ReactNode;
+  getPeriod?: React.Component | ReactNode;
 }

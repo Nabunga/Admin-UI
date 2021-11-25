@@ -31,10 +31,11 @@ const EntitiesPage: FC = () => {
         const response = await axiosInstanse.get('/db/car', {
           params: {
             limit: 20,
-            page: 1
+            page: 0
           }
         })
         dispatch({ type: EntitiesActionTypes.ENTITIES_SET_ALL_CARS, payload: response.data.data })
+        dispatch({ type: EntitiesActionTypes.ENTITIES_SET_CARS_COUNT, payload: response.data.count })
       } catch (error) {
         alert(error)
       }
@@ -49,7 +50,7 @@ const EntitiesPage: FC = () => {
   useEffect(() => {
     dispatch(getCategory())
     dispatch(getAllCars())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="app-wrapper">

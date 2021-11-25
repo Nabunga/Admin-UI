@@ -6,12 +6,12 @@ import { useDispatch } from "react-redux";
 import { OrderActionTypes } from "../../../store/types/order";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import moment from "moment";
+import { token } from "../../../constants";
 
 const OrderPageInfo: FC = () => {
   const dispatch = useDispatch()
-  const { allOrders } = useTypedSelector(state => state.order)
-  const accTok: any = localStorage.getItem("access_token")
-  const token = JSON.parse(accTok);
+  const { allOrders,currentPage,ordersCount } = useTypedSelector(state => state.order)
+
   console.log(allOrders);
 
   useEffect(() => {
@@ -19,23 +19,27 @@ const OrderPageInfo: FC = () => {
       const response = await axiosInstanse.get('/db/order', {
         params: {
           limit: 10,
-          page: 0
+          page: currentPage
         },
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
       dispatch({ type: OrderActionTypes.ORDER_SET_ALL_ORDERS, payload: response.data.data })
+      dispatch({type: OrderActionTypes.ORDER_SET_ORDERS_COUNT, payload: response.data.count})
     }
     getAllOrders()
   }, [])
+
+  console.log(ordersCount);
+  
 
   const renderedOrders = allOrders.map(order => {
     let startDate = moment(order?.dateFrom).format("DD.MM.yyyy : h:mm")
     let endDate = moment(order?.dateTo).format("DD.MM.yyyy : h:mm")
     return (
-      <>
-        <div className="order-card__info">
+      
+        <div id={order.id} className="order-card__info">
           <div className="info__car-img">
             <img
               src={order?.carId?.thumbnail?.path.includes('base64') ? order?.carId?.thumbnail?.path : `https://api-factory.simbirsoft1.com${order?.carId?.thumbnail?.path}`}
@@ -62,11 +66,15 @@ const OrderPageInfo: FC = () => {
             <button className="info__btn info__btn_edit">Изменить</button>
           </div>
         </div>
-      </>
+      
     )
   })
 
-  return <>{ renderedOrders }</>
+  return (
+    <>
+      { renderedOrders }
+    </>
+  )
   
 
 
